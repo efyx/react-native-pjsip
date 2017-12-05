@@ -15,13 +15,13 @@ export default class Call {
         let remoteName = null;
 
         if (remoteUri) {
-            let match = remoteUri.match(/"([^"]+)" <sip:([^@]+)@/);
+            let match = remoteUri.match(/"([^"]+)" <sips?:([^@]+)@/);
 
             if (match) {
                 remoteName = match[1];
                 remoteNumber = match[2];
             } else {
-                match = remoteUri.match(/sip:([^@]+)@/);
+                match = remoteUri.match(/sips?:([^@]+)@/);
 
                 if (match) {
                     remoteNumber = match[1];

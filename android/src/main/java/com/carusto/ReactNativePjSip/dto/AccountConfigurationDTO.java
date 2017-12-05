@@ -92,15 +92,15 @@ public class AccountConfigurationDTO {
     }
 
     public String getRegUri() {
-        return "sip:"+ domain;
+        return "sips:"+ domain;
     }
 
     public String getIdUri() {
         if (name != null) {
-            return name + " <sip:"+ username +"@"+ domain +">";
+            return name + " <sips:"+ username +"@"+ domain +">";
         }
 
-        return "<sip:"+ username +"@"+ domain +">";
+        return "<sips:"+ username +"@"+ domain +">";
     }
 
     public boolean isTransportNotEmpty() {

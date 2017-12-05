@@ -648,7 +648,7 @@ export default class Endpoint extends EventEmitter {
      * @private
      */
     _normalize(account, destination) {
-        if (!destination.startsWith("sip:")) {
+        if (!destination.match(/sips?:/)) {
             let realm = account.getRegServer();
 
             if (!realm) {

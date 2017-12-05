@@ -40,6 +40,7 @@ import org.pjsip.pjsua2.TransportConfig;
 import org.pjsip.pjsua2.VideoDevInfo;
 import org.pjsip.pjsua2.pj_qos_type;
 import org.pjsip.pjsua2.pjmedia_orient;
+import org.pjsip.pjsua2.pjmedia_srtp_use;
 import org.pjsip.pjsua2.pjsip_inv_state;
 import org.pjsip.pjsua2.pjsip_status_code;
 import org.pjsip.pjsua2.pjsip_transport_type_e;
@@ -521,6 +522,9 @@ public class PjSipService extends Service {
         }
 
         cfg.getSipConfig().setTransportId(transportId);
+        cfg.getMediaConfig().setSrtpUse(pjmedia_srtp_use.PJMEDIA_SRTP_MANDATORY);
+        cfg.getMediaConfig().setSrtpSecureSignaling(1);
+
 
         if (configuration.isProxyNotEmpty()) {
             StringVector v = new StringVector();
